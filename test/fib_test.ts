@@ -1,5 +1,5 @@
 import { assert } from "chai";
-import { fib } from "../app/fib";
+import { fib, fib_slow } from "../app/fib";
 
 it("return fib number", () => {
 	const cases = [
@@ -12,5 +12,15 @@ it("return fib number", () => {
 
 	for (const [val, expected] of cases) {
 		assert.equal(fib(val), expected)
+	}
+})
+
+it("return fib number", () => {
+	const cases = [1, 2, 3, 30]
+
+	for (const num of cases) {
+		const val1 = fib(num)
+		const val2 = fib_slow(num)
+		assert.equal(val1, val2)
 	}
 })
