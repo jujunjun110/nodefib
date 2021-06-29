@@ -1,0 +1,22 @@
+{
+  "name": "nodefib",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "chai": "^4.3.4",
+    "ts-node": "^10.0.0",
+    "typescript": "^4.3.4"
+  },
+  "devDependencies": {
+    "mocha": "^9.0.1"
+  },
+  "scripts": {
+    "test": "npx mocha -r ts-node/register 'test/**/*.ts'"
+  },
+  "author": "",
+  "license": "ISC"
+}
