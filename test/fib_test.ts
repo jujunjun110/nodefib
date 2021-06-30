@@ -1,7 +1,7 @@
 import { assert } from "chai";
 import { fib, fib_slow } from "../app/fib";
 
-it("returns fib number", () => {
+describe("returns fib number", () => {
 	const cases = [
 		[-10, -55],
 		[0, 0],
@@ -10,17 +10,21 @@ it("returns fib number", () => {
 		[10, 55]
 	]
 
-	for (const [val, expected] of cases) {
-		assert.equal(fib(val), expected)
+	for (const [tested, expected] of cases) {
+		it(`returns correct value: ${tested}`, () => {
+			assert.equal(fib(tested), expected)
+		})
 	}
 })
 
-it("returns correct fib number", () => {
+describe("returns correct fib number", () => {
 	const cases = [1, 2, 3, 30]
 
 	for (const num of cases) {
-		const val1 = fib(num)
-		const val2 = fib_slow(num)
-		assert.equal(val1, val2)
+		it(`returns the same value as slow version: ${num}`, () => {
+			const tested1 = fib(num)
+			const tested2 = fib_slow(num)
+			assert.equal(tested1, tested2)
+		})
 	}
 })
