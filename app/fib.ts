@@ -1,5 +1,5 @@
 export const fib = function (num: number): number {
-	return fib_inner(num, 0, 1)
+	return fib_inner(num, 1, 0)
 }
 
 export const fib_slow = function (num: number): number {
@@ -11,7 +11,7 @@ export const fib_slow = function (num: number): number {
 
 const fib_inner = function (num: number, a: number, b: number): number {
 	if (num < 0) {
-		return -fib_inner(-num, 0, 1)
+		return -fib_inner(-num, 1, 0)
 	}
 
 	if (num == 0) {
@@ -19,8 +19,8 @@ const fib_inner = function (num: number, a: number, b: number): number {
 	}
 
 	if (num == 1) {
-		return b
+		return a
 	}
 
-	return fib_inner(num - 1, b, a + b)
+	return fib_inner(num - 1, a + b, a)
 }
